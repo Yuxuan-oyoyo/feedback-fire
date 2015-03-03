@@ -11,7 +11,7 @@
 <body ng-controller="userController">
 <div class="container">
 
-<h3>Todo:</h3>
+<!--<h3>Todo:</h3>-->
 <!--<ol>-->
 <!--  <li> Change the Firebase url to be yours.</li>-->
 <!--  <li> Change the Google Analytics tracking code to be yours.</li>-->
@@ -159,8 +159,18 @@ Please consider reviewing the applications of:
     function($scope, $firebase) {
     $scope.newuser = {};
     
+
     // Here is where you update your Firebase URL. 
     var theFirebaseURL = "https://oyoyo19930814.firebaseio.com/";
+    
+    var ref = new Firebase("https://<your-firebase>.firebaseio.com");
+ref.authWithOAuthPopup("github", function(error, authData) {
+  if (error) {
+    console.log("Login Failed!", error);
+  } else {
+    console.log("Authenticated successfully with payload:", authData);
+  }
+});
     
     var ref = new Firebase(theFirebaseURL);
     $scope.users = $firebase(ref.child("feedback")).$asArray(); 
