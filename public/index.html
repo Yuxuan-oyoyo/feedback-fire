@@ -5,18 +5,19 @@
 <script src= "https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
     <script src="https://cdn.firebase.com/js/client/2.0.4/firebase.js"></script>
     <script src="https://cdn.firebase.com/libs/angularfire/0.8.0/angularfire.min.js"></script>
-  
+    
+
 </head>
 
 <body ng-controller="userController">
 <div class="container">
 
-<!--<h3>Todo:</h3>-->
-<!--<ol>-->
-<!--  <li> Change the Firebase url to be yours.</li>-->
-<!--  <li> Change the Google Analytics tracking code to be yours.</li>-->
-<!--  <li> Delete these todo bullets.</li>-->
-<!--</ol>-->
+<h3>Todo:</h3>
+<ol>
+  <li> Change the Firebase url to be yours.</li>
+  <li> Change the Google Analytics tracking code to be yours.</li>
+  <li> Delete these todo bullets.</li>
+</ol>
 <hr>
 The Singapore Government has launched a scheme where they will pay university students and recent graduates to work for local SaaS companies for up to 1 year. In addition to this government-funded subsidy, we are authorized to pay you an incentive bonus plan based on your ability to facilitate the growth of our SaaS business. Our company’s bonus plan will pay you the full amount of all recurring revenue that you personally help to facilitate. We will continue to award you all recurring revenue for 1 year after you leave the company. Please watch our short onboarding video to get an understanding of our servic.e After that, we would appreciate your feedback on what we could do to increase the possibility of you joining our company to help facilitate our growth. 
 <hr>
@@ -100,15 +101,14 @@ The Singapore Government has launched a scheme where they will pay university st
 </form>
 
 <button class="btn btn-success"  ng-click="save()">
-<span class="glyphicon glyphicon-save"></span>  Save Feedback
+<span class="glyphicon glyphicon-save"></span>  Save Feedback
 </button>
 
 </div>
 <hr>
 Please consider reviewing the applications of:
 <ul>
-  <li>the team presenting before us (<a href="">Team 4</a>)</li>
-  <li>the team presenting after us (<a href="">Team 6</a>)</li>
+  <li>the team presenting before us (<a href="">Team 21</a>)</li>
 </ul>
 
     <input type="checkbox" ng-model="hide_table" ng-init="hide_table=false"> Show submitted feedback.
@@ -131,7 +131,7 @@ Please consider reviewing the applications of:
         <tr ng-repeat="user in users">
           <td class="hidden-xs">
             <button class="btn" ng-click="editFeedback(user.$id)">
-              <span class="glyphicon glyphicon-pencil"></span>  Edit
+              <span class="glyphicon glyphicon-pencil"></span>  Edit
             </button>
           </td>
           <td class="hidden-xs hidden-sm">{{ user.uid }}</td>
@@ -146,7 +146,7 @@ Please consider reviewing the applications of:
         
           <td class="hidden-xs">
             <button class="btn" ng-click="deleteFeedback($index)">
-              <span class="glyphicon glyphicon-pencil"></span>  Delete
+              <span class="glyphicon glyphicon-pencil"></span>  Delete
             </button>
           </td>
         </tr>
@@ -159,15 +159,11 @@ Please consider reviewing the applications of:
     function($scope, $firebase) {
     $scope.newuser = {};
     
-
     // Here is where you update your Firebase URL. 
-    var theFirebaseURL = "https://oyoyo19930814.firebaseio.com/";
-
-
+    var theFirebaseURL = "https://oyoyo19930814.firebaseio.com";
     
     var ref = new Firebase(theFirebaseURL);
     $scope.users = $firebase(ref.child("feedback")).$asArray(); 
-
     $scope.edit = false;
     $scope.error = false;
     $scope.incomplete = false;  
@@ -235,7 +231,6 @@ Please consider reviewing the applications of:
     }
     
     }]);
-
 /* Firebase security rules to protect user data and feedback. 
 {
   "rules": {
@@ -268,9 +263,8 @@ Please consider reviewing the applications of:
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
   
-    ga('create', 'UA-59570653-1', 'auto');
+    ga('create', 'UA-32403946-2', 'auto');
     ga('send', 'pageview');
-
   </script>
 </body>
 </html>
