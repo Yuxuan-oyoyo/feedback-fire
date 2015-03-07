@@ -163,7 +163,7 @@ Please consider reviewing the applications of:
     // Here is where you update your Firebase URL. 
     var theFirebaseURL = "https://oyoyo19930814.firebaseio.com/";
     
-    var ref = new Firebase("https://<your-firebase>.firebaseio.com");
+    var ref = new Firebase("https://oyoyo19930814.firebaseio.com");
 ref.authWithOAuthPopup("github", function(error, authData) {
   if (error) {
     console.log("Login Failed!", error);
@@ -171,6 +171,9 @@ ref.authWithOAuthPopup("github", function(error, authData) {
     console.log("Authenticated successfully with payload:", authData);
   }
 });
+
+
+
     
     var ref = new Firebase(theFirebaseURL);
     $scope.users = $firebase(ref.child("feedback")).$asArray(); 
