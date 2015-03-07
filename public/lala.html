@@ -16,7 +16,7 @@ dododododo
 
 <!-- Show this div when the users is logged in -->
 <div ng-show="currentUser">
-  You are logged in as: {{currentUser.facebook.displayName}} <br><br>
+  You are logged in as: {{currentUser.github.displayName}} <br><br>
   <button class="btn btn-success" ng-click="editFeedback('new')">
     <span class="glyphicon"></span>Click here to leave feedback.
   </button>
@@ -27,7 +27,7 @@ dododododo
 
 <!-- Show this div when the user is not logged in -->
 <div ng-hide="currentUser">
-  <button class="btn btn-success" ng-click="login('facebook')">
+  <button class="btn btn-success" ng-click="login('github')">
     <span class="glyphicon glyphicon-user"></span>Login to leave feedback.
   </button>
 </div>
@@ -98,7 +98,7 @@ dododododo
 Please consider reviewing the applications of:
 <ul>
   <li>the team presenting before us (<a href="lala.html">Team 21</a>)</li>
-  <li>the team presenting after us (<a href="">Team 1</a>)</li>
+  <li>the team presenting after us (<a href="index.html">Team 1</a>)</li>
 </ul>
 
     <input type="checkbox" ng-model="hide_table" ng-init="hide_table=false"> Show submitted feedback.
